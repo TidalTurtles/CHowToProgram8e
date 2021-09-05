@@ -21,7 +21,6 @@ int main(void) {
         ++x;
         
     }
-    
-    printf("Total is %d\n", total);
+    printf("Total  is %d\n", total);
     
 }
