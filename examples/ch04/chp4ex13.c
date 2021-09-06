@@ -9,10 +9,9 @@
 
 int main(void) {
     
-    int x = 15;
     int total = 0;
     
-    for (int i = 1; i <= x; i = i +2) {
+    for (int i = 1; i <= 15; i = i +2) {
         
         total += i;
         
