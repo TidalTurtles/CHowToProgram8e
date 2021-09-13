@@ -1,26 +1,43 @@
 // Fig. 3.6: fig03_06.c
 // Class average program with counter-controlled iteration
 #include <stdio.h>
+#include <stdbool.h>"
 
 // function main begins program execution
 int main( void )
 {
-   unsigned int counter; // number of grade to be entered next
+   //romoved counter // number of grade to be entered next
    int grade; // grade value
    int total; // sum of grades entered by user
-   int average; // average of grades
+   int average;// average of grades
+    bool isValid; //check it
    
    // initialization phase
-   total = 0; // initialize total
-   counter = 1; // initialize loop counter
-   
+   total = 0;// initialize total
+    // initialize loop
+    //removed counter because of for loop
+    isValid = false;
    // processing phase
-   while ( counter <= 10 ) { // loop 10 times
+    for ( int i = 0; i < 10; i++ ) { // loop 10 times
       printf( "%s", "Enter grade: " ); // prompt for input
-      scanf( "%d", &grade ); // read grade from user
-      total = total + grade; // add grade to total
-      counter = counter + 1; // increment counter
-   } // end while
+      //checking validation
+        isValid = scanf("%d", &grade);
+        //clear input buffer?
+        while ((getchar()) != '\n');
+        //check input was valid
+        while (isValid != 1) {
+            printf("%s", "Improper entry, try again: ");
+            isValid = scanf("%d", &grade);
+        }
+        while (grade < 0 || grade > 100) {
+            printf("%s", "Improper entry, try again: ");
+            isValid = scanf("%d", &grade);
+        }
+        total = total + grade;
+        // read grade from user
+       // add grade to total
+       // increment counter / did not need counter in for loop
+   } // end for
    
    // termination phase
    average = total / 10; // integer division
