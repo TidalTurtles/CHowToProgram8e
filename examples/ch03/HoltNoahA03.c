@@ -42,7 +42,19 @@ int main( void )
    // termination phase
    average = total / 10; // integer division
 
-   printf( "Class average is %d\n", average ); // display result
+   printf( "Class average is %d\n", average );// display result
+    //print letter grade
+    if (average >= 90) {
+        printf("%s", "Grade is an A");
+    } else if (average < 90 && average >= 80) {
+        printf("%s", "Grade is an B");
+    } else if (average < 80 && average >= 70) {
+        printf("%s", "Grade is an C");
+    } else if (average < 70 && average >= 60) {
+        printf("%s", "Grade is an D");
+    } else {
+        printf("%s", "Grade is an F");
+    }
 } // end function main
 
 /**************************************************************************
